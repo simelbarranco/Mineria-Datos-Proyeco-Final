@@ -88,11 +88,16 @@ Predicción vs Valores Reales:
 - MSE (Error Cuadrático Medio): 0.39419070228999686
 - R² (Coeficiente de determinación): 0.603118981102588
 
-## 🔍 Hallazgos
+## 🔍 Hallazgos del Modelo
 
-- A mayor experiencia → mayor salario
-- Certificaciones influyen positivamente
-- Diferencias por industria
+Los resultados del modelo muestran que el salario está principalmente influenciado por variables relacionadas con la trayectoria profesional y el contexto laboral. En general, el árbol de decisión logró capturar patrones coherentes, reflejando tendencias reales del mercado y permitiendo interpretar cómo diferentes factores impactan la predicción.
+
+Entre los hallazgos más relevantes se destacan:
+
+- Mayor experiencia laboral → incremento directo del salario
+- Más certificaciones y educación → mejores ingresos
+- Diferencias salariales según industria
+- Buen ajuste general del modelo, con ligeras desviaciones en casos extremos
 
 ## 👥 Autores
 
