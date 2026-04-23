@@ -1,42 +1,100 @@
-# Proyecto Final - Minería de Datos
+# 📊 Predicción de Salarios con Minería de Datos (KDD)
 
-## Descripción
-Este proyecto aplica el proceso de Descubrimiento de Conocimiento en Bases de Datos (KDD) a un conjunto de datos reales obtenido de la plataforma online de ciencia de datos y aprendizaje Kaggle.
+## 📌 Descripción del Proyecto
 
-El objetivo es analizar los datos y aplicar técnicas de minería de datos para resolver un problema de clasificación o segmentación.
+Este proyecto implementa el proceso de Descubrimiento de Conocimiento en Bases de Datos (KDD) para analizar y predecir salarios en función de características laborales como experiencia, educación, industria y habilidades.
+
+El enfoque combina análisis exploratorio, transformación de datos y modelado mediante técnicas de machine learning, específicamente un Árbol de Decisión para regresión.
+
+## Objetivo
+
+Desarrollar un modelo capaz de predecir el salario de un individuo a partir de variables relevantes del mercado laboral, identificando patrones ocultos en los datos.
 
 ## Dataset: Dataset de Salario Laboral
-- Descripción: Conjunto de datos a gran escala para analizar roles laborales, experiencia, habilidades y salarios.
-- Fuente: Kaggle (Plataforma de Data Science)
-- Tipo de datos: [Click Aquí](https://www.kaggle.com/datasets/nalisha/job-salary-prediction-dataset)
 
-## Problema
-[Placeholder]
+- Nombre: Job Salary Prediction Dataset
+- Fuente: Kaggle
+- Link: [Click Aquí](https://www.kaggle.com/datasets/nalisha/job-salary-prediction-dataset)
+- Tipo: Datos estructurados (numéricos y categóricos)
+- Descripción: Dataset de gran escala que contiene información sobre:
+- Experiencia laboral
+    - Nivel educativo
+    - Industria
+    - Habilidades
+    - Tipo de empresa
+    - Ubicación
+    - Salario (variable objetivo)
 
-## Tecnologías utilizadas
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib / Seaborn
-- Jupyter Notebook
+## ❓ Problema a Resolver
 
-## Proceso KDD
+Predecir una variable continua (salario), lo que clasifica este proyecto como un problema de: ➡️ Regresión supervisada
 
-1. Selección de datos
-2. Limpieza de datos
-3. Transformación
-4. Minería de datos
-5. Interpretación
+## 🧠 Proceso KDD Aplicado
 
-## Métodos aplicados
-- Clasificación (Árbol de decisión)
+### 1. Selección de Datos
 
-## Resultados esperados
-- Modelo predictivo
-- Visualizaciones
-- Interpretación de patrones
+Se utilizó un dataset limpio con múltiples variables relevantes del entorno laboral.
 
-## Autores
+### 2. Limpieza de Datos
+
+- Eliminación de duplicados
+- Verificación de valores nulos
+- Validación de tipos de datos
+
+### 3. Transformación de Datos
+
+Codificación de variables categóricas (Label Encoding) & Escalado de variables numéricas (StandardScaler)
+
+``` 
+from sklearn.preprocessing import 
+LabelEncoder le = LabelEncoder() df[col] = le.fit_transform(df[col]) 
+```
+
+### 4. Análisis Exploratorio (EDA)
+
+| Distribución de Variables Numéricas  |  Correlación |
+:-------------------------:|:-------------------------:
+![](./assets/distribucion_variables_numericas.png)  |  ![](./assets/matriz_correlacion.png)
+
+### 5. Preparación de Datos y Modelado
+
+División:
+
+- 80% entrenamiento
+- 20% prueba
+
+> Se utilizó un modelo de: ➡️ Árbol de Decisión para Regresión
+
+``` 
+from sklearn.tree import DecisionTreeRegressor
+
+model = DecisionTreeRegressor(max_depth=5, random_state=42)
+model.fit(X_train, y_train)
+``` 
+
+## 🌳 Visualización del Modelo: Árbol de Decisión
+
+![](./assets/arbol_de_decisiones.png)
+
+## 📈 Resultados del Modelo
+
+Predicción vs Valores Reales:
+
+![](./assets/prediccion_vs_real.png)
+
+## 📏 Métricas de Evaluación
+
+- MAE (Error Absoluto Medio): 0.5033154495583846
+- MSE (Error Cuadrático Medio): 0.39419070228999686
+- R² (Coeficiente de determinación): 0.603118981102588
+
+## 🔍 Hallazgos
+
+- A mayor experiencia → mayor salario
+- Certificaciones influyen positivamente
+- Diferencias por industria
+
+## 👥 Autores
+
 - Emil Pérez Barranco
 - Wilver Abreu
